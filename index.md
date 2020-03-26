@@ -7,9 +7,9 @@ The spread of a particular disease is modeled by three quantities (compartments)
 <img src="images/graph.png" alt="illustration" class="inline"/>
 
 ### Simulation process 
-Once the graph (cf. social connections) is fixed, to initiate the spread of disease we randomly infect a given number of nodes (e.g. 2 people import the disease, or the disease originate in 1 person). Afterwards, the infection spreads according to the following dynamics:
+Once the graph (cf. social connections) is fixed, to initiate the spread of disease we randomly infect a given number of nodes (e.g. 2 people import the disease, or the disease originates in a single person). Afterwards, the infection spreads according to the following dynamics:
 
-(a) at each simulation step (corresponding to days, or other discrete time-step) each infected node infects each of its neighbors with a predefined probability beta (this shows how strongly the disease spreads).
+(a) at each simulation step (corresponding to days, or other discrete time-step) each infected node infects each of its neighbors with a predefined probability beta (this shows how quickly the disease transmits from a person to person).
 
 (b) in the same step after completing (a), each infected node becomes recovered with a given probability gamma.
 
@@ -17,10 +17,13 @@ Once the graph (cf. social connections) is fixed, to initiate the spread of dise
 
 (d) the process stops when there is no node which is infected.
 
-<img src="images/in.jpg" alt="illustration" class="inline"/>
+<img src="images/in2.jpg" alt="in" class="inline"/>
 
 ### Concluding remarks 
 
 While such models can be used to get some insights how the disease spreads in the real world,  it is important to note that the above is only an idealized mathematical model of how the infection spreads, not necessarily the rule which the actual disease follows.
 
 We observed, based on the parameters of our model (its spread and recovery rate, and the topology of the graph, i.e. how connections between nodes are made) the number of infected follows a single peak (see the illustrations). Using such models one may test various restrictive policies on the social connections, as well as how vaccination can be used to prevent the spread.
+
+<img src="images/in.jpg" alt="in" class="inline"/>
+The maximum number of infected depends on the two simulation parameters (beta and gamma) as shown on the plot above. The blue distribution attributes to uncertainty in the estimation of this number due to unknown remaining model parameters. 
