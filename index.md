@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+## Network-based simulations of epidemic spreading
 
-You can use the [editor on GitHub](https://github.com/epidemic-nets/demo/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+We model social connections by a graph (network), where each node of the graph corresponds to a person and there is an edge between two nodes if the persons they represent interact with each other. Modelling social network by a graph is a well-known and widely adopted approach.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The spread of a particular disease is modeled by three quantities (compartments), very much in the spirit of the S-I-R model - a classical mathematical model in epidemiology (where S stands for susceptible, I for infected, and R for recovered; it should be noted that the Recovered class includes deaths as well).
 
-### Markdown
+<img src="images/graph.png" alt="illustration" class="inline"/>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Simulation process 
+Once the graph (cf. social connections) is fixed, to initiate the spread of disease we randomly infect a given number of nodes (e.g. 2 people import the disease, or the disease originate in 1 person). Afterwards, the infection spreads according to the following dynamics:
 
-```markdown
-Syntax highlighted code block
+(a) at each simulation step (corresponding to days, or other discrete time-step) each infected node infects each of its neighbors with a predefined probability beta (this shows how strongly the disease spreads).
 
-# Header 1
-## Header 2
-### Header 3
+(b) in the same step after completing (a), each infected node becomes recovered with a given probability gamma.
 
-- Bulleted
-- List
+(c) every recovered node cannot be infected any more in the course of the simulation.
 
-1. Numbered
-2. List
+(d) the process stops when there is no node which is infected.
 
-**Bold** and _Italic_ and `Code` text
+<img src="images/in.jpg" alt="illustration" class="inline"/>
 
-[Link](url) and ![Image](src)
-```
+### Concluding remarks 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+While such models can be used to get some insights how the disease spreads in the real world,  it is important to note that the above is only an idealized mathematical model of how the infection spreads, not necessarily the rule which the actual disease follows.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/epidemic-nets/demo/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+We observed, based on the parameters of our model (its spread and recovery rate, and the topology of the graph, i.e. how connections between nodes are made) the number of infected follows a single peak (see the illustrations). Using such models one may test various restrictive policies on the social connections, as well as how vaccination can be used to prevent the spread.
