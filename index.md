@@ -25,5 +25,5 @@ While such models can be used to get some insights how the disease spreads in th
 
 We observed, based on the parameters of our model (its spread and recovery rate, and the topology of the graph, i.e. how connections between nodes are made) the number of infected follows a single peak (see the illustrations). Using such models one may test various restrictive policies on the social connections, as well as how vaccination can be used to prevent the spread.
 
-<img src="images/in.jpg" alt="in" class="inline"/>
+<img src="images/gammabeta.jpg" alt="in" class="inline"/>
 The maximum number of infected depends on the two simulation parameters (beta and gamma) as shown on the plot above. The blue distribution attributes to uncertainty in the estimation of this number due to unknown remaining model parameters. 
